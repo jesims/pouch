@@ -1,10 +1,12 @@
+import 'dart:io';
+
 import 'package:glob/glob.dart';
 import 'package:glob/list_local_fs.dart';
 
 import 'collections.dart';
 
 // ignore: public_member_api_docs
-typedef PeekFunction = void Function<E>(E element);
+typedef FileSystemEntityPeekFunction = void Function(FileSystemEntity element);
 
 /// Deletes all [FileSystemEntity]s matching the provided globs.
 ///
@@ -15,7 +17,7 @@ typedef PeekFunction = void Function<E>(E element);
 /// `since 0.0.1`
 Future<void> deleteFilesMatchingGlobs(
   Iterable<String> globs, {
-  PeekFunction? peek,
+  FileSystemEntityPeekFunction? peek,
 }) async {
   if (isEmpty(globs)) {
     return;
