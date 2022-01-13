@@ -1,0 +1,28 @@
+version: 2.1
+jobs:
+  test-analyze-format-job:
+    docker:
+      - image: axrs/anvil:base
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dart-{{ .Environment.CACHE_VERSION }}-{{ checksum "pubspec.yaml" }}
+      - run: "dart pub get"
+      - save_cache:
+          key: dart-{{ .Environment.CACHE_VERSION }}-{{ checksum "pubspec.yaml" }}
+          paths:
+            - ~/.pub-cache
+      - run:
+          name: Setup Environment Variables
+          command: |
+            echo 'export PATH=$DART_SDK/bin:$PATH' >> $BASH_ENV
+      - run: "dart pub get"
+      - run: "dart test"
+      - run: "dart analyze"
+      - run: "dart format --fix ."
+      - run: "git diff-index --name-status HEAD"
+workflows:
+  main:
+    jobs:
+      - test-analyze-format-job
