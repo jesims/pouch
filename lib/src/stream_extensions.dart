@@ -4,9 +4,9 @@ import 'dart:async';
 ///
 /// `since 0.0.1`
 extension StreamExtensions<E> on Stream<E> {
-  /// Returns an [Stream] consisting of the elements of this iterable,
+  /// Returns an [Stream] consisting of the elements of this [Stream],
   /// additionally performing the provided action on each element as elements
-  /// are consumed from the resulting iterable
+  /// are consumed from the resulting [Stream]
   ///
   /// `since 0.0.1`
   Stream<E> peek(void Function(E element) fn) {
