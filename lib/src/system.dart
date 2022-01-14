@@ -30,14 +30,13 @@ Future<void> deleteFilesMatchingGlobs(
   if (isEmpty(globs)) {
     return;
   }
-  p.Context? globContext;
-  if (isNotBlank(workingDirectory)) {
-    globContext = p.Context(current: workingDirectory);
-  }
+  var globContext = isNotBlank(workingDirectory)
+      ? p.Context(current: workingDirectory)
+      : p.context;
   await Glob(
     "{${globs.join(',')}}",
     context: globContext,
-  ).list(root: globContext?.current).forEach((fse) async {
+  ).list(root: globContext.current).forEach((fse) async {
     if (isNotNull(peek)) {
       peek!(fse);
     }
