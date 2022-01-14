@@ -10,6 +10,8 @@ void main() {
     expect(pouch.isEmpty([1]), isFalse);
     expect(pouch.isEmpty(<dynamic>{'key'}), isFalse);
     expect(pouch.isEmpty({'key': 1}), isFalse);
+    expect(pouch.isEmpty(''), isTrue);
+    expect(pouch.isEmpty('1234'), isFalse);
   });
 
   test('isNotEmpty() is true if the list is not empty', () {
@@ -20,5 +22,7 @@ void main() {
     expect(pouch.isNotEmpty([1]), isTrue);
     expect(pouch.isNotEmpty(<dynamic>{'key'}), isTrue);
     expect(pouch.isNotEmpty({'key': 1}), isTrue);
+    expect(pouch.isNotEmpty(''), isFalse);
+    expect(pouch.isNotEmpty('1234'), isTrue);
   });
 }

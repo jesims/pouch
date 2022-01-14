@@ -4,14 +4,9 @@ import 'package:glob/glob.dart';
 import 'package:glob/list_local_fs.dart';
 import 'package:path/path.dart' as p;
 
-import 'collections.dart';
-import 'objects.dart';
 import 'strings.dart';
 
-// ignore: public_member_api_docs
-typedef FileSystemEntityPeekFunction = void Function(FileSystemEntity element);
-
-/// Deletes all [FileSystemEntity]s matching the provided globs.
+/// Lists all [FileSystemEntity]s matching the provided globs.
 ///
 /// The globs will be combined to `Match one of several possibilities {...,...}`
 ///
@@ -22,24 +17,22 @@ typedef FileSystemEntityPeekFunction = void Function(FileSystemEntity element);
 /// [p.context]
 ///
 /// `since 0.0.1`
-Future<void> deleteFilesMatchingGlobs(
+Future<Stream<FileSystemEntity>> listFilesByGlob(
   Iterable<String> globs, {
-  FileSystemEntityPeekFunction? peek,
   String? workingDirectory,
 }) async {
-  if (isEmpty(globs)) {
-    return;
-  }
   var globContext = isNotBlank(workingDirectory)
       ? p.Context(current: workingDirectory)
       : p.context;
-  await Glob(
-    "{${globs.join(',')}}",
-    context: globContext,
-  ).list(root: globContext.current).forEach((fse) async {
-    if (isNotNull(peek)) {
-      peek!(fse);
-    }
+  return Glob("{${globs.join(',')}}", context: globContext)
+      .list(root: globContext.current);
+}
+
+/// Recursively deletes all [FileSystemEntity]s in the provided [Stream]
+///
+/// `since 0.0.1`
+Future<void> deleteFiles(Stream<FileSystemEntity> files) {
+  return files.forEach((fse) async {
     await fse.delete(recursive: true);
   });
 }

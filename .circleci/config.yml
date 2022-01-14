@@ -13,15 +13,10 @@ jobs:
           key: dart-{{ .Environment.CACHE_VERSION }}-{{ checksum "pubspec.yaml" }}
           paths:
             - ~/.pub-cache
-      - run:
-          name: Setup Environment Variables
-          command: |
-            echo 'export PATH=$DART_SDK/bin:$PATH' >> $BASH_ENV
-      - run: "dart pub get"
-      - run: "dart test"
       - run: "dart analyze"
       - run: "dart format --fix ."
-      - run: "git diff-index --name-status HEAD"
+      - run: "dart test"
+      - run: "git diff-index --name-status HEAD --exit-code"
 workflows:
   main:
     jobs:

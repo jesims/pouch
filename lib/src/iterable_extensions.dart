@@ -1,3 +1,4 @@
+import 'collections.dart' as coll;
 import 'objects.dart';
 
 /// Extends [Iterable]s with some common helper properties and functions
@@ -9,8 +10,7 @@ extension IterableExtensions<E> on Iterable<E> {
   ///
   /// `since 0.0.1`
   E? get firstOrNull {
-    var it = iterator;
-    return it.moveNext() ? it.current : null;
+    return coll.firstOrNull(this);
   }
 
   /// Returns an [Iterable] consisting of the elements of this iterable,
