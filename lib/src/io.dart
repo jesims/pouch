@@ -1,5 +1,8 @@
-import 'dart:io';
+import 'dart:async';
 
+// As it's required for FSE peek to operate correctly
+// ignore: implementation_imports
+import 'package:file/src/interface/file_system_entity.dart';
 import 'package:glob/glob.dart';
 import 'package:glob/list_local_fs.dart';
 import 'package:path/path.dart' as p;
