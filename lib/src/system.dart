@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:glob/glob.dart';
 import 'package:glob/list_local_fs.dart';
+import 'package:path/path.dart' as p;
+import 'package:pouch/pouch.dart';
 
 import 'collections.dart';
 
@@ -18,12 +20,19 @@ typedef FileSystemEntityPeekFunction = void Function(FileSystemEntity element);
 Future<void> deleteFilesMatchingGlobs(
   Iterable<String> globs, {
   FileSystemEntityPeekFunction? peek,
+  String? workingDirectory,
 }) async {
   if (isEmpty(globs)) {
     return;
   }
-  var searchPattern = "{${globs.join(',')}}";
-  await Glob(searchPattern).list().forEach((fse) async {
+  p.Context? ctx;
+  if (isNotBlank(workingDirectory)) {
+    ctx = p.Context(current: workingDirectory);
+  }
+  await Glob(
+    "{${globs.join(',')}}",
+    context: ctx,
+  ).list().forEach((fse) async {
     if (peek != null) {
       peek(fse);
     }
