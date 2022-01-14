@@ -1,4 +1,4 @@
 /// Generic Dart System utilities and helpers
-library pouch_system;
+library pouch_io;
 
 export 'src/io.dart';
