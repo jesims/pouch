@@ -10,12 +10,13 @@ extension StreamExtensions<E> on Stream<E> {
   ///
   /// `since 0.0.1`
   Stream<E> peek(void Function(E element) fn) {
-    var transformer = StreamTransformer<E, E>.fromHandlers(
-      handleData: (data, sink) {
-        fn(data);
-        return sink.add(data);
-      },
+    return transform(
+      StreamTransformer<E, E>.fromHandlers(
+        handleData: (data, sink) {
+          fn(data);
+          return sink.add(data);
+        },
+      ),
     );
-    return transform(transformer);
   }
 }
