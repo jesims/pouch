@@ -18,6 +18,7 @@ import 'strings.dart';
 /// [p.context]
 ///
 /// `since 0.0.1`
+//TODO add ability to specify FileSystem
 Stream<FileSystemEntity> listFilesByGlob(
   Iterable<String> globs, {
   String? workingDirectory,
