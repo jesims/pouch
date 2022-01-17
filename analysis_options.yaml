@@ -1,0 +1,6 @@
+include: package:jesi_dart_analysis/analysis_options.yaml
+
+linter:
+  rules:
+    package_api_docs: true
+    public_member_api_docs: true

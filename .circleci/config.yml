@@ -1,0 +1,23 @@
+version: 2.1
+jobs:
+  test-analyze-format-job:
+    docker:
+      - image: axrs/anvil:base
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dart-{{ .Environment.CACHE_VERSION }}-{{ checksum "pubspec.yaml" }}
+      - run: "dart pub get"
+      - save_cache:
+          key: dart-{{ .Environment.CACHE_VERSION }}-{{ checksum "pubspec.yaml" }}
+          paths:
+            - ~/.pub-cache
+      - run: "dart analyze"
+      - run: "dart format --fix ."
+      - run: "dart test"
+      - run: "git diff-index --name-status HEAD --exit-code"
+workflows:
+  main:
+    jobs:
+      - test-analyze-format-job

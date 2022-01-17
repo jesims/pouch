@@ -1,0 +1,16 @@
+.dart_tool/
+.packages
+/.idea/ClojureProjectResolveSettings.xml
+/.idea/azure/
+/.idea/azureSettings.xml
+/.idea/codestream.xml
+/.idea/csv-plugin.xml
+/.idea/dataSources*
+/.idea/dictionaries/
+/.idea/git_toolbox_prj.xml
+/.idea/libraries/
+/.idea/shelf/
+/.idea/uiDesigner.xml
+/.idea/workspace.xml
+build/
+pubspec.lock
