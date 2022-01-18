@@ -13,3 +13,23 @@ bool isNotBlank(String? v) => isFalse(isBlank(v));
 /// `since 0.0.1`
 // TODO improver performance by checking if every character is whitespace
 bool isBlank(String? v) => isNull(v) || v!.trim().isEmpty;
+
+/// Returns `true` if [left] is equal to [right] irrespective of case
+///
+/// `since 0.1.0`
+bool equalsIgnoreCase(String? left, String? right) {
+  return left?.toLowerCase() == right?.toLowerCase();
+}
+
+/// Returns `true` if [s] contains the [needle] irrespective of case
+///
+/// `since 0.1.0`
+bool containsIgnoreCase(String? s, String? needle) {
+  if (isNull(s) && isNull(needle)) {
+    return true;
+  } else if (isNull(s) || isNull(needle)) {
+    return false;
+  } else {
+    return s!.toLowerCase().contains(needle!.toLowerCase());
+  }
+}
