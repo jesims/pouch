@@ -1,3 +1,10 @@
+## 0.3.0
+
+Added:
+
+- `Predicates.eq`
+- `Predicates.ne`
+
 ## 0.2.0
 
 Added:
