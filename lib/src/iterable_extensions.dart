@@ -22,6 +22,15 @@ extension IterableExtensions<E> on Iterable<E> {
     forEach(fn);
     return this;
   }
+
+  /// Returns a lazily filtered [Iterable] (via [Iterable.where]) using the
+  /// provided [predicate] when the supplied [condition] is `true`. Otherwise
+  /// returns the original, un-filtered, [Iterable].
+  ///
+  /// `since 0.2.0`
+  Iterable<E> filterWhen(bool condition, bool Function(E element) predicate) {
+    return condition ? where(predicate) : this;
+  }
 }
 
 /// Extends [Iterable]s of [Iterable]s
