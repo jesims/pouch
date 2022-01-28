@@ -31,4 +31,20 @@ void main() {
     actual = [collection2, collection1].flatten;
     expect(actual, equals([1, 2, 'a', 'b']));
   });
+
+  group('filterWhen', () {
+    test('condition is false', () {
+      var coll = [1, 2, 3, 4, 5];
+
+      var actual = coll.filterWhen(false, (element) => false);
+      expect(identical(actual, coll), isTrue);
+    });
+
+    test('condition is true', () {
+      var coll = [1, 2, 3, 4, 5];
+
+      var actual = coll.filterWhen(true, (element) => element.isEven);
+      expect(actual, equals([2, 4]));
+    });
+  });
 }
