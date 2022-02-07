@@ -1,3 +1,14 @@
+## 0.4.0
+
+Added:
+
+- `package:pouch/pouch.dart`
+  - `MapExtentions.removeNullValues`
+  - `MapUtil.removeNullValues`
+  - `Wait.until`
+- `package:pouch/pouch_io.dart`
+  - `PathUtil.relativeToCurrent`
+
 ## 0.3.0
 
 Added:
