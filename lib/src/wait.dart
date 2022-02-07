@@ -1,0 +1,29 @@
+import 'dart:async';
+
+import 'booleans.dart';
+
+/// Wait Helper Utilities
+class Wait {
+  Wait._();
+
+  /// Waits for a supplied [taskName] to be complete by periodically checking
+  /// (controlled by [checkInterval]) until [isDone] returns `true`.
+  ///
+  /// The task will be, at most, waited until [isDone] resolves `true` or
+  /// until the until maximum specified [timeout] duration is reached.
+  static Future<void> until(
+    String taskName,
+    FutureOr<bool> Function() isDone, {
+    Duration timeout = const Duration(seconds: 30),
+    Duration checkInterval = const Duration(milliseconds: 100),
+  }) async {
+    var timeoutEpochMs =
+        DateTime.now().millisecondsSinceEpoch + timeout.inMilliseconds;
+    while (isFalse(await isDone())) {
+      if (timeoutEpochMs < DateTime.now().millisecondsSinceEpoch) {
+        throw TimeoutException('timed out waiting for $taskName');
+      }
+      await Future.delayed(checkInterval);
+    }
+  }
+}
