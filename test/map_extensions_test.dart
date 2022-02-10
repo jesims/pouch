@@ -1,15 +1,15 @@
-import 'package:pouch/src/map_util.dart';
+import 'package:pouch/src/map_extensions.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('MapUtil', () {
+  group('MapExtensions', () {
     test('removeNullValues', () {
       expect(
-        MapUtil.removeNullValues({
+        {
           'a': 1,
           'b': null,
           'c': 4,
-        }),
+        }.removeNullValues(),
         equals({
           'a': 1,
           'c': 4,

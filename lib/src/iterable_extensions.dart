@@ -1,3 +1,4 @@
+import 'collection_util.dart';
 import 'collections.dart' as coll;
 import 'objects.dart';
 
@@ -30,6 +31,12 @@ extension IterableExtensions<E> on Iterable<E> {
   /// `since 0.2.0`
   Iterable<E> filterWhen(bool condition, bool Function(E element) predicate) {
     return condition ? where(predicate) : this;
+  }
+
+  /// Takes a [path] `List` and returns the value at [path] in a nested collection.
+  /// Traverses `Map` (by key), `List` (by index), and `Iterable` (by index) values.
+  dynamic getIn(List<dynamic> path) {
+    return CollectionUtil.getIn(path, this);
   }
 }
 
