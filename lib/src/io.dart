@@ -5,6 +5,7 @@ import 'package:glob/glob.dart';
 import 'package:glob/list_local_fs.dart';
 import 'package:path/path.dart' as p;
 
+// TODO move into a util class https://github.com/jesims/docs/blob/master/Coding-Conventions/Dart.md#utilities
 import 'strings.dart';
 
 /// Lists all [File](https://pub.dev/packages/file) [FileSystemEntity]s matching the provided globs.

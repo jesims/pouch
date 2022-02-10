@@ -1,3 +1,4 @@
+// TODO move into a util class https://github.com/jesims/docs/blob/master/Coding-Conventions/Dart.md#utilities
 import 'booleans.dart';
 import 'objects.dart';
 
