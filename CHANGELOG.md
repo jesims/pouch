@@ -1,3 +1,9 @@
+# 0.5.1
+
+Fixed:
+
+- `CollectionUtil.getIn` when dealing with `Iterables`, now correctly uses `int` indexes
+
 # 0.5.0
 
 Added:

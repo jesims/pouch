@@ -21,7 +21,7 @@ class CollectionUtil {
           return prev[e];
         }
         if (prev is Iterable && prev.isNotEmpty) {
-          return prev.elementAt(int.parse(e));
+          return prev.elementAt(e);
         }
       }
       return null;
