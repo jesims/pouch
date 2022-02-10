@@ -29,6 +29,19 @@ void main() {
           ];
           expect(CollectionUtil.getIn(path, coll), equals('b'));
         }
+        {
+          var path = [1, 1, 'b', 5];
+          var coll = [
+            0,
+            [
+              4,
+              {'a': 'a', 'b': StringIterable('batman')},
+              6
+            ],
+            2
+          ];
+          expect(CollectionUtil.getIn(path, coll), equals('n'));
+        }
       });
       test('errors if key is not found', () {
         expect(
@@ -62,4 +75,38 @@ void main() {
       });
     });
   });
+}
+
+class StringIterable extends Iterable {
+  final String value;
+
+  const StringIterable(this.value);
+
+  @override
+  String toString() {
+    return value;
+  }
+
+  @override
+  Iterator get iterator => StringIterator(value);
+}
+
+class StringIterator extends Iterator<String> {
+  final String value;
+  int index = -1;
+
+  StringIterator(this.value);
+
+  @override
+  String get current => String.fromCharCode(value.codeUnitAt(index));
+
+  @override
+  bool moveNext() {
+    if (index < value.length) {
+      index++;
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
