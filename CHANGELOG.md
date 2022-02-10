@@ -2,7 +2,7 @@
 
 Added:
 
-- `getIn` function
+- `CollectionUtil.getIn` function
 - `getIn` extension to `Map`, `List`, & `Iterable`
 - `KeyNotFoundException`
 

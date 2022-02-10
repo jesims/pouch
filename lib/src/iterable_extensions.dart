@@ -1,3 +1,4 @@
+import 'collection_util.dart';
 import 'collections.dart' as coll;
 import 'objects.dart';
 
@@ -35,7 +36,7 @@ extension IterableExtensions<E> on Iterable<E> {
   /// Takes a [path] `List` and returns the value at [path] in a nested collection.
   /// Traverses `Map` (by key), `List` (by index), and `Iterable` (by index) values.
   dynamic getIn(List<dynamic> path) {
-    return coll.getIn(path, this);
+    return CollectionUtil.getIn(path, this);
   }
 }
 

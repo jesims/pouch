@@ -2,6 +2,7 @@
 library pouch;
 
 export 'src/booleans.dart';
+export 'src/collection_util.dart';
 export 'src/collections.dart';
 export 'src/exceptions.dart';
 export 'src/iterable_extensions.dart';

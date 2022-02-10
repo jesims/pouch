@@ -1,6 +1,5 @@
 import 'objects.dart';
 
-//TODO why is this in a class with a Util suffix when that is not the convention in the rest of the library
 /// Useful Map extensions
 class MapUtil {
   MapUtil._();
