@@ -31,6 +31,12 @@ extension IterableExtensions<E> on Iterable<E> {
   Iterable<E> filterWhen(bool condition, bool Function(E element) predicate) {
     return condition ? where(predicate) : this;
   }
+
+  /// Takes a [path] `List` and returns the value at [path] in a nested collection.
+  /// Traverses `Map` (by key), `List` (by index), and `Iterable` (by index) values.
+  dynamic getIn(List<dynamic> path) {
+    return coll.getIn(path, this);
+  }
 }
 
 /// Extends [Iterable]s of [Iterable]s

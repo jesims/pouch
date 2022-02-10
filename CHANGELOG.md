@@ -1,4 +1,12 @@
-## 0.4.0
+# 0.5.0
+
+Added:
+
+- `getIn` function
+- `getIn` extension to `Map`, `List`, & `Iterable`
+- `KeyNotFoundException`
+
+# 0.4.0
 
 Added:
 
@@ -9,26 +17,26 @@ Added:
 - `package:pouch/pouch_io.dart`
   - `PathUtil.relativeToCurrent`
 
-## 0.3.0
+# 0.3.0
 
 Added:
 
 - `Predicates.eq`
 - `Predicates.ne`
 
-## 0.2.0
+# 0.2.0
 
 Added:
 
 - `Iterable.filterWhen`
 
-## 0.1.0
+# 0.1.0
 
 Added:
 
 - `containsIgnoreCase`
 - `equalsIgnoreCase`
 
-## 0.0.1
+# 0.0.1
 
 - Initial version.
