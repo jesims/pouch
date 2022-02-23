@@ -3,7 +3,7 @@
 ## Pre-Merge
 
 - [ ] Version updated in accordance with [Semver](https://semver.org)
-- [ ] Public functions, variables, and objects have doc strings
+- [ ] Public functions, variables, and objects have doc strings with `@since ...` tags
 - [ ] Public functions and objects have unit tests
 - [ ] All updated captured in `CHANGELOG.md`
 - [ ] CI/CD pipeline passes
