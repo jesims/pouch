@@ -3,6 +3,8 @@ import 'dart:async';
 import 'booleans.dart';
 
 /// Wait Helper Utilities
+///
+/// `since 0.4.0`
 class Wait {
   Wait._();
 
@@ -11,6 +13,8 @@ class Wait {
   ///
   /// The task will be, at most, waited until [isDone] resolves `true` or
   /// until the until maximum specified [timeout] duration is reached.
+  ///
+  /// `since 0.4.0`
   static Future<void> until(
     String taskName,
     FutureOr<bool> Function() isDone, {
