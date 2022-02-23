@@ -1,3 +1,9 @@
+# 0.6.0
+
+Added:
+
+- `IterableExtentions.partition` for splitting an iterable into multiple sub-lists
+
 # 0.5.1
 
 Fixed:

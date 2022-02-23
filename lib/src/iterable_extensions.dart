@@ -40,6 +40,15 @@ extension IterableExtensions<E> on Iterable<E> {
   dynamic getIn(List<dynamic> path) {
     return CollectionUtil.getIn(path, this);
   }
+
+  /// Returns an [Iterable] of [Iterable]s of [n] items each without overlap.
+  ///
+  /// `since 0.6.0`
+  Iterable partition(int n) {
+    assert(0 < n);
+    // TODO Consider making lazy
+    return isEmpty ? [] : ([take(n), ...skip(n).partition(n)]);
+  }
 }
 
 /// Extends [Iterable]s of [Iterable]s

@@ -32,6 +32,46 @@ void main() {
     expect(actual, equals([1, 2, 'a', 'b']));
   });
 
+  group('partition', () {
+    test('empty return empty iterable', () {
+      var coll = [];
+
+      var actual = coll.partition(2);
+
+      // Note: Not identical
+      expect(actual, equals(coll));
+    });
+
+    test('equal number of items', () {
+      var coll = [0, 1, 2, 3, 4, 5];
+
+      var actual = coll.partition(2);
+
+      expect(
+        actual,
+        equals([
+          [0, 1],
+          [2, 3],
+          [4, 5]
+        ]),
+      );
+    });
+
+    test('unequal number of items', () {
+      var coll = [0, 1, 2];
+
+      var actual = coll.partition(2);
+
+      expect(
+        actual,
+        equals([
+          [0, 1],
+          [2]
+        ]),
+      );
+    });
+  });
+
   group('filterWhen', () {
     test('condition is false', () {
       var coll = [1, 2, 3, 4, 5];
