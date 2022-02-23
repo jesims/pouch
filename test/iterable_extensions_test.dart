@@ -57,6 +57,19 @@ void main() {
       );
     });
 
+    test('less items than partition', () {
+      var coll = [0, 1, 2];
+
+      var actual = coll.partition(4);
+
+      expect(
+        actual,
+        equals([
+          [0, 1, 2],
+        ]),
+      );
+    });
+
     test('unequal number of items', () {
       var coll = [0, 1, 2];
 
