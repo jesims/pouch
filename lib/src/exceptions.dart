@@ -1,4 +1,6 @@
 /// Exception that can be thrown when a key is not found  in a `Map`
+///
+/// `since 0.5.0`
 class KeyNotFoundException implements Exception {
   /// The message
   final String message;

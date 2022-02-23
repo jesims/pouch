@@ -35,6 +35,8 @@ extension IterableExtensions<E> on Iterable<E> {
 
   /// Takes a [path] `List` and returns the value at [path] in a nested collection.
   /// Traverses `Map` (by key), `List` (by index), and `Iterable` (by index) values.
+  ///
+  /// `since 0.5.0`
   dynamic getIn(List<dynamic> path) {
     return CollectionUtil.getIn(path, this);
   }
