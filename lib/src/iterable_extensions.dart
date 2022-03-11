@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart' as coll_lib;
+
 import 'collection_util.dart';
 import 'collections.dart' as coll;
 import 'objects.dart';
@@ -49,6 +51,15 @@ extension IterableExtensions<E> on Iterable<E> {
     // TODO Consider making lazy
     return isEmpty ? [] : ([take(n), ...skip(n).partition(n)]);
   }
+
+  /// Groups the elements by the value returned by [key].
+  ///
+  /// Returns a map from keys computed by [key] to a list of all values for which
+  /// [key] returns that key. The values appear in the list in the same relative
+  /// order as this.
+  Map<K, List<E>> groupBy<K>(K Function(E) key) {
+    return coll_lib.groupBy(this, key);
+  }
 }
 
 /// Extends [Iterable]s of [Iterable]s
@@ -59,7 +70,21 @@ extension NestedIterableExtensions<E> on Iterable<Iterable<E>> {
   /// elements in iteration order.
   ///
   /// `since 0.0.1`
-  Iterable<E?> get flatten {
+  Iterable<E> get flatten {
     return expand(identity);
   }
+}
+
+/// Extends [Iterable] of [Future]s
+///
+/// `since 0.8.0`
+extension FutureIterableExtension<V> on Iterable<Future<V>> {
+  /// Does a [Future.wait] for all values in this.
+  ///
+  /// `since 0.8.0`
+  Future<List<V>> awaitAll({
+    bool eagerError = false,
+    void Function(V successValue)? cleanUp,
+  }) =>
+      Future.wait(this, eagerError: eagerError, cleanUp: cleanUp);
 }

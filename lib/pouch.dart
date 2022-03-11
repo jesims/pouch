@@ -15,6 +15,7 @@ export 'src/object_extensions.dart';
 export 'src/objects.dart';
 export 'src/predicates.dart';
 export 'src/require.dart';
+export 'src/resource.dart';
 export 'src/stream_extensions.dart';
 export 'src/string_extensions.dart';
 export 'src/strings.dart';
