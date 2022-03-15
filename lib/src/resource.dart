@@ -37,12 +37,14 @@ class ResourceUtils {
 /// `since 0.8.0`
 //TODO remove once https://github.com/dart-lang/sdk/issues/43490 is done
 mixin ResourceSync {
+  ///
+  ///
+  /// `since 0.8.0`
   void disposeSync();
 
   ///
   ///
   /// `since 0.8.0`
-
   R using<R, S extends Resource>(R Function(S) fn) {
     return ResourceUtils.usingSync(this as S, fn);
   }
