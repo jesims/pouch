@@ -100,6 +100,18 @@ void main() {
       expect(actual, equals([2, 4]));
     });
   });
+
+  test('groupBy', () {
+    var a = [1, 'a'];
+    var b = [2, 'b'];
+    var c = [1, 'c'];
+    var coll = [a, b, c];
+    expect(coll.groupBy((v) => v.first), {
+      1: [a, c],
+      2: [b]
+    });
+  });
+
   test('awaitAll', () async {
     var coll = [1, 2, 3];
     expect(await coll.map(Future.value).awaitAll(), coll);
