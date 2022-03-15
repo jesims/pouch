@@ -1,6 +1,6 @@
 /// Extensions to [Object]?
 /// `since 0.7.0`
-extension ObjectExtensions on Object? {
+extension NullableObjectExtensions on Object? {
   /// Returns [true] if [this] is [null]
   /// `since 0.7.0`
   bool get isNull => this == null;

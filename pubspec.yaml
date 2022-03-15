@@ -16,3 +16,4 @@ dev_dependencies:
   jesi_dart_analysis:
     git:
       url: https://github.com/jesims/jesi_dart_analysis.git
+  faker: ^2.0.0

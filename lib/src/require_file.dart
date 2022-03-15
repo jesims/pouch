@@ -9,10 +9,11 @@ class RequireFile {
 
   /// Throws an exception if the [file] does not exist (using [Require.require])
   /// `since 0.7.0`
-  static Future<void> exists(File file) async {
+  static Future<File> exists(File file) async {
     Require.require(
       await file.exists(),
       'File not found: ${file.path}',
     );
+    return file;
   }
 }
