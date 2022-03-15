@@ -6,6 +6,11 @@ Added:
   - `ResourceUtils`
   - `ResourceSync`
 - `FutureIterableExtensions`
+- `IterableExtensions.groupBy`
+
+Fixed:
+
+- type parameter for `NestedIterableExtensions.flatten`
 
 # 0.7.0
 
