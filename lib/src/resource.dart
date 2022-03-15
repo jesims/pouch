@@ -22,14 +22,14 @@ class ResourceUtils {
   /// Synchronous version of [ResourceUtils.using]
   ///
   /// `since 0.8.0`
-  static R usingSync<R, T extends Resource>(
+  static R usingSync<R, T extends ResourceSync>(
     T resource,
     R Function(T) fn,
   ) {
     try {
       return fn(resource);
     } finally {
-      resource.dispose();
+      resource.disposeSync();
     }
   }
 }
@@ -47,7 +47,7 @@ mixin ResourceSync {
   /// Calls [ResourceUtils.usingSync] on `this`.
   ///
   /// `since 0.8.0`
-  R using<R, S extends Resource>(R Function(S) fn) {
+  R usingSync<R, S extends ResourceSync>(R Function(S) fn) {
     return ResourceUtils.usingSync(this as S, fn);
   }
 }

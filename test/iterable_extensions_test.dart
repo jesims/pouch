@@ -100,4 +100,8 @@ void main() {
       expect(actual, equals([2, 4]));
     });
   });
+  test('awaitAll', () async {
+    var coll = [1, 2, 3];
+    expect(await coll.map(Future.value).awaitAll(), coll);
+  });
 }
