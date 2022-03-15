@@ -1,4 +1,6 @@
 import 'bool_extensions.dart';
+import 'string_extensions.dart';
+import 'strings.dart';
 
 /// Default implementation of [RequireException] which carries a message.
 ///
@@ -21,13 +23,21 @@ class RequireException implements Exception {
 class Require {
   Require._();
 
-  /// Throws an [RequireException] with [message] if [check] is `false`
+  /// Throws a [RequireException] with [message] if [check] is `false`
   ///
   /// `since 0.7.0`
-  static bool require(bool check, String message) {
+  static void require(bool check, String message) {
     if (check.isFalse) {
       throw RequireException(message);
     }
-    return check;
+  }
+
+  /// Throws a [RequireException] if [string] is blank.
+  /// See [isBlank]
+  ///
+  /// `since 0.7.0`
+  static String notBlank(String? string) {
+    Require.require(string.isNotBlank, 'String is blank');
+    return string!;
   }
 }

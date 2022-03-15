@@ -5,6 +5,7 @@ Added:
 - `BoolExtenstions`
 - `FutureBoolExtensions`
 - `NullableObjectExtensions`
+- `NullableStringExtensions`
 - `RequireFile` to `pouch_io.dart`
 - `Require` and `RequireException`
 

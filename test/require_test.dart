@@ -11,8 +11,23 @@ void main() {
           throwsA(TypeMatcher<RequireException>()),
         );
       });
-      test('returns check', () {
-        expect(Require.require(true, Faker().lorem.sentence()), true);
+    });
+    group('notBlank', () {
+      test('throws an exception if string is blank', () {
+        void expectThrown(String? s) {
+          expect(
+            () => Require.notBlank(s),
+            throwsA(TypeMatcher<RequireException>()),
+          );
+        }
+
+        expectThrown(null);
+        expectThrown('');
+        expectThrown(' ');
+      });
+      test('returns string', () {
+        var s = Faker().lorem.sentence();
+        expect(Require.notBlank(s), s);
       });
     });
   });
