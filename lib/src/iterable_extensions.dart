@@ -56,7 +56,7 @@ extension IterableExtensions<E> on Iterable<E> {
   ///
   /// Returns a map from keys computed by [key] to a list of all values for which
   /// [key] returns that key. The values appear in the list in the same relative
-  /// order as this.
+  /// order as `this`.
   Map<K, List<E>> groupBy<K>(K Function(E) key) {
     return coll_lib.groupBy(this, key);
   }
@@ -79,7 +79,7 @@ extension NestedIterableExtensions<E> on Iterable<Iterable<E>> {
 ///
 /// `since 0.8.0`
 extension FutureIterableExtensions<V> on Iterable<Future<V>> {
-  /// Does a [Future.wait] for all values in this.
+  /// Does a [Future.wait] for all values in `this`.
   ///
   /// `since 0.8.0`
   Future<List<V>> awaitAll({
