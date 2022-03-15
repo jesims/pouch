@@ -2,7 +2,10 @@
 
 Added:
 
-- ``
+- `Resource` with:
+  - `ResourceUtils`
+  - `ResourceSync`
+- `FutureIterableExtensions`
 
 # 0.7.0
 

@@ -78,7 +78,7 @@ extension NestedIterableExtensions<E> on Iterable<Iterable<E>> {
 /// Extends [Iterable] of [Future]s
 ///
 /// `since 0.8.0`
-extension FutureIterableExtension<V> on Iterable<Future<V>> {
+extension FutureIterableExtensions<V> on Iterable<Future<V>> {
   /// Does a [Future.wait] for all values in this.
   ///
   /// `since 0.8.0`
