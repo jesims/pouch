@@ -8,7 +8,7 @@ void main() {
       test('throws an exception if check is false', () {
         expect(
           () => Require.require(false, Faker().lorem.sentence()),
-          throwsException,
+          throwsA(TypeMatcher<RequireException>()),
         );
       });
       test('returns check', () {
