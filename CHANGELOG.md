@@ -1,3 +1,13 @@
+# 0.7.0
+
+Added:
+
+- `BoolExtenstions`
+- `FutureBoolExtensions`
+- `ObjectExtensions`
+- `RequireFile` to `pouch_io.dart`
+- `Require`
+
 # 0.6.0
 
 Added:
