@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'bool_extensions.dart';
+import 'future_extensions.dart';
 
 /// Wait Helper Utilities
 ///
@@ -23,7 +23,7 @@ class Wait {
   }) async {
     var timeoutEpochMs =
         DateTime.now().millisecondsSinceEpoch + timeout.inMilliseconds;
-    while ((await isDone()).isFalse) {
+    while (await isDone().isFalse) {
       if (timeoutEpochMs < DateTime.now().millisecondsSinceEpoch) {
         throw TimeoutException('timed out waiting for $taskName');
       }

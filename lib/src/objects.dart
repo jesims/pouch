@@ -1,5 +1,5 @@
 // TODO move into a util class https://github.com/jesims/docs/blob/master/Coding-Conventions/Dart.md#utilities
-import 'bool_extensions.dart';
+import 'object_extensions.dart';
 
 /// Returns its argument
 ///
@@ -9,12 +9,12 @@ T identity<T>(T x) => x;
 /// Returns `true` if the [value] is `null`
 ///
 /// `since 0.0.1`
-bool isNull(Object? value) => value == null;
+bool isNull(Object? value) => value.isNull;
 
 /// Returns `true` if the [value] is not `null`
 ///
 /// `since 0.0.1`
-bool isNotNull(Object? value) => isNull(value).isFalse;
+bool isNotNull(Object? value) => value.isNotNull;
 
 /// If [x] is an instance of [T], returns [x] cast to [T],
 /// otherwise returns `null`.
