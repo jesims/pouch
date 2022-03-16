@@ -22,10 +22,10 @@ Fixed:
 
 Added:
 
-- `BoolExtenstions.isTrue`
 - `FutureIterableExtensions`
 - `FutureOrBoolExtensions`
 - `IterableExtensions.groupBy`
+- `NullableBoolExtensions`
 - `Resource` with:
   - `ResourceUtils`
   - `ResourceSync`
