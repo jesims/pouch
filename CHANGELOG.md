@@ -23,11 +23,12 @@ Fixed:
 Added:
 
 - `BoolExtenstions.isTrue`
+- `FutureIterableExtensions`
+- `FutureOrBoolExtensions`
+- `IterableExtensions.groupBy`
 - `Resource` with:
   - `ResourceUtils`
   - `ResourceSync`
-- `FutureIterableExtensions`
-- `IterableExtensions.groupBy`
 
 # 0.7.0
 
