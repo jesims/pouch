@@ -22,6 +22,7 @@ Fixed:
 
 Added:
 
+- `BoolExtenstions.isTrue`
 - `Resource` with:
   - `ResourceUtils`
   - `ResourceSync`
