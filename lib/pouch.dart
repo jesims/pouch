@@ -3,12 +3,10 @@ library pouch;
 
 export 'src/bool_extensions.dart';
 export 'src/booleans.dart';
-export 'src/collection_util.dart';
 export 'src/collections.dart';
 export 'src/exceptions.dart';
 export 'src/future_extensions.dart';
 export 'src/iterable_extensions.dart';
-export 'src/list_extensions.dart';
 export 'src/map_extensions.dart';
 export 'src/map_util.dart';
 export 'src/object_extensions.dart';

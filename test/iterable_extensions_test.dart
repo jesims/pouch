@@ -21,7 +21,7 @@ void main() {
     var collection1 = ['a', 'b'];
     var collection2 = [1, 2];
 
-    Iterable<Object?> actual = [collection1].flatten;
+    Iterable<Object> actual = [collection1].flatten;
     expect(actual, equals(collection1));
 
     actual = [collection1, collection2].flatten;

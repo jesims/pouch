@@ -1,4 +1,24 @@
-# 0.8.0
+# 1.0.0
+
+Breaking:
+
+- Require at least Dart SDK 2.15
+- Removed functions not inline with the Dart way:
+  - `CollectionUtil.getIn`
+  - `IterableExtensions.getIn`
+  - `ListExtensions.getIn`
+  - `isNotEmpty`
+  - `isEmpty`
+- Use `Object` rather than `dynamic` in:
+  - `KeyNotFoundException`
+  - `isNull`
+  - `isNotNull`
+  - `cast`
+  - `toString`
+
+Fixed:
+
+- type parameter for `NestedIterableExtensions.flatten`
 
 Added:
 
@@ -7,10 +27,6 @@ Added:
   - `ResourceSync`
 - `FutureIterableExtensions`
 - `IterableExtensions.groupBy`
-
-Fixed:
-
-- type parameter for `NestedIterableExtensions.flatten`
 
 # 0.7.0
 

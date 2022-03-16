@@ -44,7 +44,7 @@ mixin ResourceSync {
   /// `since 0.8.0`
   void disposeSync();
 
-  /// Calls [ResourceUtils.usingSync] on `this`.
+  /// Calls [ResourceUtils.usingSync] on [this].
   ///
   /// `since 0.8.0`
   R usingSync<R, S extends ResourceSync>(R Function(S) fn) {
@@ -63,7 +63,7 @@ mixin Resource {
   /// `since 0.8.0`
   Future<void> dispose();
 
-  /// Calls [ResourceUtils.using] on `this`.
+  /// Calls [ResourceUtils.using] on [this].
   ///
   /// `since 0.8.0`
   Future<R> using<R, S extends Resource>(Future<R> Function(S) fn) async {

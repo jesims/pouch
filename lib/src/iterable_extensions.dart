@@ -1,6 +1,5 @@
 import 'package:collection/collection.dart' as coll_lib;
 
-import 'collection_util.dart';
 import 'collections.dart' as coll;
 import 'objects.dart';
 
@@ -12,6 +11,7 @@ extension IterableExtensions<E> on Iterable<E> {
   /// empty
   ///
   /// `since 0.0.1`
+  //TODO move to nullable extension
   E? get firstOrNull {
     return coll.firstOrNull(this);
   }
@@ -35,14 +35,6 @@ extension IterableExtensions<E> on Iterable<E> {
     return condition ? where(predicate) : this;
   }
 
-  /// Takes a [path] `List` and returns the value at [path] in a nested collection.
-  /// Traverses `Map` (by key), `List` (by index), and `Iterable` (by index) values.
-  ///
-  /// `since 0.5.0`
-  dynamic getIn(List<dynamic> path) {
-    return CollectionUtil.getIn(path, this);
-  }
-
   /// Returns an [Iterable] of [Iterable]s of [n] items each without overlap.
   ///
   /// `since 0.6.0`
@@ -56,7 +48,7 @@ extension IterableExtensions<E> on Iterable<E> {
   ///
   /// Returns a map from keys computed by [key] to a list of all values for which
   /// [key] returns that key. The values appear in the list in the same relative
-  /// order as `this`.
+  /// order as [this].
   Map<K, List<E>> groupBy<K>(K Function(E) key) {
     return coll_lib.groupBy(this, key);
   }
@@ -79,7 +71,7 @@ extension NestedIterableExtensions<E> on Iterable<Iterable<E>> {
 ///
 /// `since 0.8.0`
 extension FutureIterableExtensions<V> on Iterable<Future<V>> {
-  /// Does a [Future.wait] for all values in `this`.
+  /// Does a [Future.wait] for all values in [this].
   ///
   /// `since 0.8.0`
   Future<List<V>> awaitAll({
