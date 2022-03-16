@@ -6,9 +6,4 @@ extension BoolExtensions on bool {
   ///
   /// `since 0.7.0`
   bool get isFalse => this == false;
-
-  /// Returns `true` when [this] is `true`
-  ///
-  /// `since 0.7.0`
-  bool get isTrue => this == true;
 }
