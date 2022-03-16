@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use_from_same_package
+
 import 'package:pouch/pouch.dart' as pouch;
 import 'package:test/test.dart';
 

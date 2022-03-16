@@ -1,10 +1,10 @@
 name: pouch
 description: Generic Dart utilities and helper functions
-version: 0.7.0
+version: 1.0.0
 homepage: https://github.com/jesims/pouch
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.15.0 <3.0.0'
 
 dependencies:
   glob: ^2.0.2
