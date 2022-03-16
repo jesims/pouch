@@ -6,7 +6,7 @@ class KeyNotFoundException implements Exception {
   final String message;
 
   /// Takes the [map] and [key] and creates the [message]
-  KeyNotFoundException(Map<Object, Object> map, Object key)
+  KeyNotFoundException(Map<Object?, Object?> map, Object? key)
       : message = 'Map $map does not contain key: ${Error.safeToString(key)}';
 
   @override
