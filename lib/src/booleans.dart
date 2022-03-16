@@ -5,11 +5,9 @@ import 'bool_extensions.dart';
 /// Use [BoolExtensions] instead
 ///
 /// `since 0.0.1`
-@Deprecated('Use [BoolExtensions.isFalse]')
 bool isFalse(bool? value) => value == false;
 
 /// Returns `true` if the boolean [value] is `true`
 ///
 /// `since 0.0.1`
-@Deprecated('Use [BoolExtensions.isTrue]')
 bool isTrue(bool? value) => value == true;
