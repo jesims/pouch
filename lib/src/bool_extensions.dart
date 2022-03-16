@@ -1,7 +1,7 @@
 /// Extensions to [bool]
 ///
 /// `since 0.7.0`
-extension BoolExtenstions on bool {
+extension BoolExtensions on bool {
   /// Returns `true` when [this] is `false`
   ///
   /// `since 0.7.0`
