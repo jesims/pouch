@@ -11,5 +11,14 @@ void main() {
         expect(true.isFalse, false);
       });
     });
+
+    group('isTrue', () {
+      test('returns true when value is true', () {
+        expect(true.isTrue, true);
+      });
+      test('returns false when value is not true', () {
+        expect(false.isTrue, false);
+      });
+    });
   });
 }

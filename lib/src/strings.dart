@@ -1,12 +1,12 @@
 // TODO move into a util class https://github.com/jesims/docs/blob/master/Coding-Conventions/Dart.md#utilities
-import 'booleans.dart';
+import 'bool_extensions.dart';
 import 'objects.dart';
 
 /// Returns `true` if the provided [String] value [v] is not `null` and is not
 /// blank (whitespaces)
 ///
 /// `since 0.0.1`
-bool isNotBlank(String? v) => isFalse(isBlank(v));
+bool isNotBlank(String? v) => isBlank(v).isFalse;
 
 /// Returns `true` if the provided [String] value [v] is `null` or blank
 /// (whitespace only)
