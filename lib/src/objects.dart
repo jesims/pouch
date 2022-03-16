@@ -1,5 +1,5 @@
 // TODO move into a util class https://github.com/jesims/docs/blob/master/Coding-Conventions/Dart.md#utilities
-import 'booleans.dart';
+import 'bool_extensions.dart';
 
 /// Returns its argument
 ///
@@ -14,7 +14,7 @@ bool isNull(Object? value) => value == null;
 /// Returns `true` if the [value] is not `null`
 ///
 /// `since 0.0.1`
-bool isNotNull(Object? value) => isFalse(isNull(value));
+bool isNotNull(Object? value) => isNull(value).isFalse;
 
 /// If [x] is an instance of [T], returns [x] cast to [T],
 /// otherwise returns `null`.
