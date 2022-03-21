@@ -3,6 +3,11 @@ import 'package:test/test.dart';
 
 void main() {
   test('firstOrNull', () {
+    expect(null.firstOrNull, equals(null));
+    Iterable<int>? genericIterable;
+    expect(genericIterable.firstOrNull, equals(null));
+    Iterable? rawIterable;
+    expect(rawIterable.firstOrNull, equals(null));
     expect([].firstOrNull, equals(null));
     expect([1].firstOrNull, equals(1));
     expect([2, 3, 1].firstOrNull, equals(2));
