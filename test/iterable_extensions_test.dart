@@ -116,4 +116,34 @@ void main() {
     var coll = [1, 2, 3];
     expect(await coll.map(Future.value).awaitAll(), coll);
   });
+
+  group('isEmpty', () {
+    test('returns true when iterable is null', () {
+      expect(null.isEmpty, true);
+      Iterable<int>? i;
+      expect(i.isEmpty, true);
+    });
+    test('returns true when iterable is empty', () {
+      expect([].isEmpty, true);
+      expect({}.entries.isEmpty, true);
+    });
+    test('returns false when iterable is not empty', () {
+      expect([1].isEmpty, false);
+    });
+  });
+
+  group('isNotEmpty', () {
+    test('returns false when iterable is null', () {
+      expect(null.isNotEmpty, false);
+      Iterable<int>? i;
+      expect(i.isNotEmpty, false);
+    });
+    test('returns false when iterable is empty', () {
+      expect([].isNotEmpty, false);
+      expect({}.entries.isNotEmpty, false);
+    });
+    test('returns true when iterable is not empty', () {
+      expect([1].isNotEmpty, true);
+    });
+  });
 }
