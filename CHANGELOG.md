@@ -3,6 +3,7 @@
 Added:
 
 - `NullableIterableExtensions.isEmpty` and `.isNotEmpty`
+- `NullableMapExensions.isEmpty` and `.isNotEmpty`
 
 # 1.0.0
 

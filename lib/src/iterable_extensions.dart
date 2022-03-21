@@ -3,7 +3,7 @@ import 'package:collection/collection.dart' as coll_lib;
 import 'bool_extensions.dart';
 import 'collections.dart' as coll;
 import 'object_extensions.dart';
-import 'objects.dart';
+import 'objects.dart' as o;
 
 /// Extends [Iterable]s with some common helper properties and functions
 ///
@@ -56,7 +56,7 @@ extension NestedIterableExtensions<E> on Iterable<Iterable<E>> {
   ///
   /// `since 0.0.1`
   Iterable<E> get flatten {
-    return expand(identity);
+    return expand(o.identity);
   }
 }
 
@@ -83,14 +83,14 @@ extension NullableIterableExtensions<E> on Iterable<E>? {
   ///
   /// `since 0.0.1`
   E? get firstOrNull {
-    return this.isNull ? null : coll.firstOrNull(this!);
+    return isNull ? null : coll.firstOrNull(this!);
   }
 
   /// Returns `true` if [this] is `null` or empty
   ///
   /// `since 1.1.0`
   bool get isEmpty {
-    return this.isNull || this!.iterator.moveNext().isFalse;
+    return isNull || this!.iterator.moveNext().isFalse;
   }
 
   /// Returns `true` if [this] is NOT `null` and NOT empty

@@ -17,4 +17,34 @@ void main() {
       );
     });
   });
+
+  group('isEmpty', () {
+    test('returns true when map is null', () {
+      Map<int, int>? genericMap;
+      expect(genericMap.isEmpty, true);
+      Map? rawMap;
+      expect(rawMap.isEmpty, true);
+    });
+    test('returns true when map is empty', () {
+      expect({}.isEmpty, true);
+    });
+    test('returns false when map is not empty', () {
+      expect({1: 1}.isEmpty, false);
+    });
+  });
+
+  group('isNotEmpty', () {
+    test('returns false when map is null', () {
+      Map<int, int>? genericMap;
+      expect(genericMap.isNotEmpty, false);
+      Map? rawMap;
+      expect(rawMap.isNotEmpty, false);
+    });
+    test('returns false when map is empty', () {
+      expect({}.isNotEmpty, false);
+    });
+    test('returns false when map is not empty', () {
+      expect({1: 1}.isNotEmpty, true);
+    });
+  });
 }

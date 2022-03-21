@@ -119,9 +119,10 @@ void main() {
 
   group('isEmpty', () {
     test('returns true when iterable is null', () {
-      expect(null.isEmpty, true);
-      Iterable<int>? i;
-      expect(i.isEmpty, true);
+      Iterable<int>? genericIterable;
+      expect(genericIterable.isEmpty, true);
+      Iterable? rawIterable;
+      expect(rawIterable.isEmpty, true);
     });
     test('returns true when iterable is empty', () {
       expect([].isEmpty, true);
@@ -134,7 +135,6 @@ void main() {
 
   group('isNotEmpty', () {
     test('returns false when iterable is null', () {
-      expect(null.isNotEmpty, false);
       Iterable<int>? i;
       expect(i.isNotEmpty, false);
     });
