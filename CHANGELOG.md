@@ -1,3 +1,9 @@
+# 1.1.0
+
+Added:
+
+- `NullableIterableExtensions.isEmpty` and `.isNotEmpty`
+
 # 1.0.0
 
 Breaking:

@@ -1,21 +1,14 @@
 import 'package:collection/collection.dart' as coll_lib;
 
+import 'bool_extensions.dart';
 import 'collections.dart' as coll;
+import 'object_extensions.dart';
 import 'objects.dart';
 
 /// Extends [Iterable]s with some common helper properties and functions
 ///
 /// `since 0.0.1`
 extension IterableExtensions<E> on Iterable<E> {
-  /// Returns the first element from the iterable, or null if the iterable is
-  /// empty
-  ///
-  /// `since 0.0.1`
-  //TODO move to nullable extension
-  E? get firstOrNull {
-    return coll.firstOrNull(this);
-  }
-
   /// Returns an [Iterable] consisting of the elements of this iterable,
   /// additionally performing the provided action on each element as elements
   /// are consumed from the resulting iterable
@@ -79,4 +72,31 @@ extension FutureIterableExtensions<V> on Iterable<Future<V>> {
     void Function(V successValue)? cleanUp,
   }) =>
       Future.wait(this, eagerError: eagerError, cleanUp: cleanUp);
+}
+
+/// Extensions to [Iterable]<E>?
+///
+/// `since 1.1.0`
+extension NullableIterableExtensions<E> on Iterable<E>? {
+  /// Returns the first element from [this] iterable, or `null` if [this] iterable
+  /// is `null` or empty
+  ///
+  /// `since 0.0.1`
+  E? get firstOrNull {
+    return this.isNull ? null : coll.firstOrNull(this!);
+  }
+
+  /// Returns `true` if [this] is `null` or empty
+  ///
+  /// `since 1.1`
+  bool get isEmpty {
+    return this.isNull || this!.iterator.moveNext().isFalse;
+  }
+
+  /// Returns `true` if [this] is NOT `null` and NOT empty
+  ///
+  /// `since 1.1`
+  bool get isNotEmpty {
+    return this.isNotNull && this!.iterator.moveNext();
+  }
 }
