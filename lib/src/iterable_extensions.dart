@@ -88,15 +88,15 @@ extension NullableIterableExtensions<E> on Iterable<E>? {
 
   /// Returns `true` if [this] is `null` or empty
   ///
-  /// `since 1.1`
+  /// `since 1.1.0`
   bool get isEmpty {
     return this.isNull || this!.iterator.moveNext().isFalse;
   }
 
   /// Returns `true` if [this] is NOT `null` and NOT empty
   ///
-  /// `since 1.1`
+  /// `since 1.1.0`
   bool get isNotEmpty {
-    return this.isNotNull && this!.iterator.moveNext();
+    return isEmpty.isFalse;
   }
 }
