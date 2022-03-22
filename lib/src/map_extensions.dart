@@ -1,4 +1,6 @@
+import 'bool_extensions.dart';
 import 'map_util.dart';
+import 'object_extensions.dart';
 
 /// Useful Map extensions
 ///
@@ -9,5 +11,24 @@ extension MapExtentions on Map {
   /// `since 0.4.0`
   Map removeNullValues() {
     return MapUtil.removeNullValues(this);
+  }
+}
+
+/// Extensions to [Map]?
+///
+/// `since 1.1.0`
+extension NullableMapExensions<K, V> on Map<K, V>? {
+  /// Returns `true` if [this] is `null` or empty
+  ///
+  /// `since 1.1.0`
+  bool get isEmpty {
+    return isNull || this!.entries.isEmpty;
+  }
+
+  /// Returns `true` if [this] is NOT `null` and NOT empty
+  ///
+  /// `since 1.1.0`
+  bool get isNotEmpty {
+    return isEmpty.isFalse;
   }
 }

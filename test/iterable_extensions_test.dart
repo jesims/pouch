@@ -3,6 +3,11 @@ import 'package:test/test.dart';
 
 void main() {
   test('firstOrNull', () {
+    expect(null.firstOrNull, equals(null));
+    Iterable<int>? genericIterable;
+    expect(genericIterable.firstOrNull, equals(null));
+    Iterable? rawIterable;
+    expect(rawIterable.firstOrNull, equals(null));
     expect([].firstOrNull, equals(null));
     expect([1].firstOrNull, equals(1));
     expect([2, 3, 1].firstOrNull, equals(2));
@@ -115,5 +120,35 @@ void main() {
   test('awaitAll', () async {
     var coll = [1, 2, 3];
     expect(await coll.map(Future.value).awaitAll(), coll);
+  });
+
+  group('isEmpty', () {
+    test('returns true when iterable is null', () {
+      Iterable<int>? genericIterable;
+      expect(genericIterable.isEmpty, true);
+      Iterable? rawIterable;
+      expect(rawIterable.isEmpty, true);
+    });
+    test('returns true when iterable is empty', () {
+      expect([].isEmpty, true);
+      expect({}.entries.isEmpty, true);
+    });
+    test('returns false when iterable is not empty', () {
+      expect([1].isEmpty, false);
+    });
+  });
+
+  group('isNotEmpty', () {
+    test('returns false when iterable is null', () {
+      Iterable<int>? i;
+      expect(i.isNotEmpty, false);
+    });
+    test('returns false when iterable is empty', () {
+      expect([].isNotEmpty, false);
+      expect({}.entries.isNotEmpty, false);
+    });
+    test('returns true when iterable is not empty', () {
+      expect([1].isNotEmpty, true);
+    });
   });
 }
