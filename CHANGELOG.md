@@ -1,3 +1,9 @@
+# 1.2.0
+
+Added:
+
+- `NullableStringExtensions.isEmpty` and `.isNotEmpty`
+
 # 1.1.0
 
 Added:
