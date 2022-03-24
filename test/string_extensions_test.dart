@@ -36,5 +36,31 @@ void main() {
         expectFalse('\t');
       });
     });
+    group('isEmpty', () {
+      test('returns true when string is null', () {
+        String? s;
+        expect(s, null);
+        expect(s.isEmpty, true);
+      });
+      test('returns true when string is empty', () {
+        expect(''.isEmpty, true);
+      });
+      test('returns false when string is not empty', () {
+        expect(Faker().lorem.word().isEmpty, false);
+      });
+    });
+    group('isNotEmpty', () {
+      test('returns false when string is null', () {
+        String? s;
+        expect(s, null);
+        expect(s.isNotEmpty, false);
+      });
+      test('returns false when string is empty', () {
+        expect(''.isNotEmpty, false);
+      });
+      test('returns true when string is not empty', () {
+        expect(Faker().lorem.word().isNotEmpty, true);
+      });
+    });
   });
 }
