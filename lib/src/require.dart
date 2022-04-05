@@ -15,6 +15,11 @@ class RequireException implements Exception {
   ///
   /// `since 0.7.0`
   RequireException(this.message);
+
+  @override
+  String toString() {
+    return 'RequireException: $message';
+  }
 }
 
 /// Util for checking
