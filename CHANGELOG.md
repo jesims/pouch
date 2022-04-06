@@ -1,3 +1,9 @@
+# 1.2.1
+
+Fixed:
+
+- `RequireException` now outputs the `message` in `toString()`
+
 # 1.2.0
 
 Added:
