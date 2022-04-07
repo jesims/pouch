@@ -1,3 +1,14 @@
+# 1.3.0
+
+Added to `pouch_io`:
+
+- `FileSystemEntityUtil.delete`
+- `FileSystemEntityExtensions.forceDelete`
+
+Change:
+
+- `deleteFiles` to use `FileSystemEntityUtil.delete`
+
 # 1.2.1
 
 Fixed:

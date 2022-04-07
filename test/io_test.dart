@@ -1,6 +1,6 @@
 import 'package:file/local.dart';
 import 'package:file/memory.dart';
-import 'package:path/path.dart' as p;
+import 'package:path/path.dart' as path;
 import 'package:pouch/pouch.dart';
 import 'package:pouch/pouch_io.dart';
 import 'package:test/test.dart';
@@ -17,7 +17,7 @@ void main() {
           .toSet(),
       {'README.md', 'CHANGELOG.md'}
           //TODO partial
-          .map((s) => p.join(fs.currentDirectory.path, s))
+          .map((s) => path.join(fs.currentDirectory.path, s))
           .toSet(),
     );
   });
