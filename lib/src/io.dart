@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:file/file.dart';
 import 'package:glob/glob.dart';
 import 'package:glob/list_local_fs.dart';
-import 'package:path/path.dart' as p;
+import 'package:path/path.dart' as path;
 
 // TODO move into a util class https://github.com/jesims/docs/blob/master/Coding-Conventions/Dart.md#utilities
 import 'file_system_entity_util.dart';
@@ -17,7 +17,7 @@ import 'strings.dart';
 ///
 /// [workingDirectory] will be the root path for the glob pattern to be
 /// evaluated in. Defaults to the current working directory provided by
-/// [p.context]
+/// [path.context]
 ///
 /// `since 0.0.1`
 //TODO add ability to specify FileSystem
@@ -26,8 +26,8 @@ Stream<FileSystemEntity> listFilesByGlob(
   String? workingDirectory,
 }) {
   var context = isNotBlank(workingDirectory)
-      ? p.Context(current: workingDirectory)
-      : p.context;
+      ? path.Context(current: workingDirectory)
+      : path.context;
   return Glob(
     globs.length == 1 ? globs.first : "{${globs.join(',')}}",
     context: context,

@@ -1,5 +1,5 @@
 import 'package:file/local.dart';
-import 'package:path/path.dart' as p;
+import 'package:path/path.dart' as path;
 
 /// Path Helper Utilities
 class PathUtil {
@@ -10,7 +10,7 @@ class PathUtil {
   ///
   /// `since 0.4.0`
   static String relativeToCurrent(String folder) {
-    return p.normalize(
+    return path.normalize(
       LocalFileSystem().currentDirectory.childDirectory(folder).absolute.path,
     );
   }
