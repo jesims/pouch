@@ -3,7 +3,7 @@
 Added to `pouch_io`:
 
 - `FileSystemEntityUtil.delete`
-- `FileSystemEntityExtensions.deleteExisting`
+- `FileSystemEntityExtensions.forceDelete`
 
 Change:
 
