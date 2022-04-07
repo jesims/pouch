@@ -18,7 +18,7 @@ extension FileSystemEntityExtensions on FileSystemEntity {
   ///
   /// If [recursive] is true, the [FileSystemEntity] is deleted even if the type
   /// of the [FileSystemEntity] doesn't match the content of the file system.
-  /// This behavior allows [deleteExisting] to be used to unconditionally delete any file
+  /// This behavior allows [forceDelete] to be used to unconditionally delete any file
   /// system object.
   ///
   /// Returns a `Future<FileSystemEntity>` that completes with [this]
@@ -26,8 +26,7 @@ extension FileSystemEntityExtensions on FileSystemEntity {
   /// cannot be deleted, the future completes with an exception.
   ///
   /// `since 1.3.0`
-  //FIXME is this the best name?
-  Future<void> deleteExisting({
+  Future<void> forceDelete({
     bool recursive = false,
   }) async {
     return FileSystemEntityUtil.delete(this, recursive: recursive);

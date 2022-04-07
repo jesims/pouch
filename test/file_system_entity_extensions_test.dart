@@ -1,15 +1,14 @@
-import 'dart:io' as io;
-
 import 'package:file/memory.dart';
 import 'package:path/path.dart' as path;
 import 'package:pouch/pouch.dart';
 import 'package:pouch/pouch_io.dart';
 import 'package:test/test.dart';
+import 'package:universal_io/io.dart' as io;
 
 void main() {
   var fs = MemoryFileSystem();
   group('FileSystemEntityExtensions', () {
-    group('deleteExisting', () {
+    group('forceDelete', () {
       var file = fs.file('test.txt');
       var dir = fs.directory('dir');
       var fileInDir = fs.file(path.join(dir.path, file.basename));
@@ -18,7 +17,7 @@ void main() {
           await file.create();
         }
         expect(await file.exists(), true);
-        await file.deleteExisting();
+        await file.forceDelete();
         expect(await file.exists(), false);
       });
       test('deletes the directory', () async {
@@ -31,7 +30,7 @@ void main() {
           await fileInDir.create();
         }
         expect(await fileInDir.exists(), true);
-        await dir.deleteExisting(recursive: true);
+        await dir.forceDelete(recursive: true);
         expect(await dir.exists(), false);
         expect(await fileInDir.exists(), false);
       });
@@ -40,7 +39,7 @@ void main() {
           await file.delete();
         }
         expect(await file.exists(), false);
-        await file.deleteExisting();
+        await file.forceDelete();
         expect(
           () async => await file.delete(),
           throwsA(TypeMatcher<io.FileSystemException>()),
@@ -51,7 +50,7 @@ void main() {
           await dir.delete();
         }
         expect(await dir.exists(), false);
-        await dir.deleteExisting();
+        await dir.forceDelete();
         expect(
           () async => await dir.delete(),
           throwsA(TypeMatcher<io.FileSystemException>()),
