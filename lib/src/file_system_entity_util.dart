@@ -1,6 +1,6 @@
 import 'package:file/file.dart';
 
-///
+/// Utilities for [FileSystemEntity]
 ///
 /// `since 1.3.0`
 class FileSystemEntityUtil {

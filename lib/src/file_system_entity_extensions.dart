@@ -2,7 +2,7 @@ import 'package:file/file.dart';
 
 import 'file_system_entity_util.dart';
 
-///
+/// Extensions on [FileSystemEntity]
 ///
 /// `since 1.3.0`
 extension FileSystemEntityExtensions on FileSystemEntity {
