@@ -6,6 +6,7 @@ import 'package:glob/list_local_fs.dart';
 import 'package:path/path.dart' as p;
 
 // TODO move into a util class https://github.com/jesims/docs/blob/master/Coding-Conventions/Dart.md#utilities
+import 'file_system_entity_util.dart';
 import 'strings.dart';
 
 /// Lists all [File](https://pub.dev/packages/file) [FileSystemEntity]s matching the provided globs.
@@ -34,10 +35,11 @@ Stream<FileSystemEntity> listFilesByGlob(
 }
 
 /// Recursively deletes all [File](https://pub.dev/packages/file) [FileSystemEntity]s in the provided [Stream]
+/// using [FileSystemEntityUtil.delete]
 ///
 /// `since 0.0.1`
 Future<void> deleteFiles(Stream<FileSystemEntity> files) async {
-  return files.forEach((fse) async {
-    await fse.delete(recursive: true);
-  });
+  return files.forEach(
+    (fse) async => await FileSystemEntityUtil.delete(fse, recursive: true),
+  );
 }
