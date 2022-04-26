@@ -22,11 +22,11 @@ void main() {
     test('returns true when map is null', () {
       Map<int, int>? genericMap;
       expect(genericMap.isEmpty, true);
-      Map? rawMap;
+      Map<int, int>? rawMap;
       expect(rawMap.isEmpty, true);
     });
     test('returns true when map is empty', () {
-      expect({}.isEmpty, true);
+      expect(<int, int>{}.isEmpty, true);
     });
     test('returns false when map is not empty', () {
       expect({1: 1}.isEmpty, false);
@@ -37,11 +37,11 @@ void main() {
     test('returns false when map is null', () {
       Map<int, int>? genericMap;
       expect(genericMap.isNotEmpty, false);
-      Map? rawMap;
+      Map<int, int>? rawMap;
       expect(rawMap.isNotEmpty, false);
     });
     test('returns false when map is empty', () {
-      expect({}.isNotEmpty, false);
+      expect(<int, int>{}.isNotEmpty, false);
     });
     test('returns false when map is not empty', () {
       expect({1: 1}.isNotEmpty, true);

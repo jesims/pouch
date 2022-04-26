@@ -18,3 +18,4 @@ export 'src/stream_extensions.dart';
 export 'src/string_extensions.dart';
 export 'src/strings.dart';
 export 'src/wait.dart';
+export 'src/models/models.dart';

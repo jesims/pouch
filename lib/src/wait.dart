@@ -27,7 +27,7 @@ class Wait {
       if (timeoutEpochMs < DateTime.now().millisecondsSinceEpoch) {
         throw TimeoutException('timed out waiting for $taskName');
       }
-      await Future.delayed(checkInterval);
+      await Future<void>.delayed(checkInterval);
     }
   }
 }

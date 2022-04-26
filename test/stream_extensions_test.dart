@@ -6,7 +6,7 @@ void main() {
   test('peek', () async {
     var coll = [1, 2, 3];
     var stream = Stream<int>.fromIterable(coll);
-    var peeked = [];
+    var peeked = <int>[];
     var actual = await stream.peek((e) => peeked.add(e)).toList();
     expect(peeked, equals(coll));
     expect(actual, equals(coll));
