@@ -6,9 +6,9 @@ void main() {
     expect(null.firstOrNull, equals(null));
     Iterable<int>? genericIterable;
     expect(genericIterable.firstOrNull, equals(null));
-    Iterable? rawIterable;
+    Iterable<int>? rawIterable;
     expect(rawIterable.firstOrNull, equals(null));
-    expect([].firstOrNull, equals(null));
+    expect(<int>[].firstOrNull, equals(null));
     expect([1].firstOrNull, equals(1));
     expect([2, 3, 1].firstOrNull, equals(2));
     var expected = 'a';
@@ -17,7 +17,7 @@ void main() {
 
   test('peek', () {
     var collection = [8, 2, 3, 1];
-    var peeked = [];
+    var peeked = <int>[];
     expect(collection.peek(pouch.identity), equals(collection));
     expect(collection.peek((e) => peeked.add(e)), equals(collection));
   });
@@ -39,7 +39,7 @@ void main() {
 
   group('partition', () {
     test('empty return empty iterable', () {
-      var coll = [];
+      var coll = <int>[];
 
       var actual = coll.partition(2);
 
@@ -126,12 +126,12 @@ void main() {
     test('returns true when iterable is null', () {
       Iterable<int>? genericIterable;
       expect(genericIterable.isEmpty, true);
-      Iterable? rawIterable;
+      Iterable<int>? rawIterable;
       expect(rawIterable.isEmpty, true);
     });
     test('returns true when iterable is empty', () {
-      expect([].isEmpty, true);
-      expect({}.entries.isEmpty, true);
+      expect(<int>[].isEmpty, true);
+      expect(<int, int>{}.entries.isEmpty, true);
     });
     test('returns false when iterable is not empty', () {
       expect([1].isEmpty, false);
@@ -144,8 +144,8 @@ void main() {
       expect(i.isNotEmpty, false);
     });
     test('returns false when iterable is empty', () {
-      expect([].isNotEmpty, false);
-      expect({}.entries.isNotEmpty, false);
+      expect(<int>[].isNotEmpty, false);
+      expect(<int, int>{}.entries.isNotEmpty, false);
     });
     test('returns true when iterable is not empty', () {
       expect([1].isNotEmpty, true);

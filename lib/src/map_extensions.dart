@@ -5,11 +5,11 @@ import 'object_extensions.dart';
 /// Useful Map extensions
 ///
 /// `since 0.4.0`
-extension MapExtentions on Map {
+extension MapExtentions on Map<dynamic, dynamic> {
   /// Removes entries where the value is `null`
   ///
   /// `since 0.4.0`
-  Map removeNullValues() {
+  Map<dynamic, dynamic> removeNullValues() {
     return MapUtil.removeNullValues(this);
   }
 }

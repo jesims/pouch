@@ -12,7 +12,7 @@ void main() {
         expect(await file.exists(), false);
         expect(
           () => RequireFile.exists(file),
-          throwsA(TypeMatcher<path.RequireException>()),
+          throwsA(const TypeMatcher<path.RequireException>()),
         );
       });
       test('returns the file if it does exist', () async {

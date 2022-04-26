@@ -6,7 +6,7 @@ void main() {
     String? v;
     expect(pouch.isNull(v), isTrue);
     expect(pouch.isNull('value'), isFalse);
-    var x = [];
+    var x = <String>[];
     expect(pouch.isNull(x), isFalse);
   });
 
@@ -14,7 +14,7 @@ void main() {
     String? v;
     expect(pouch.isNotNull(v), isFalse);
     expect(pouch.isNotNull('value'), isTrue);
-    var x = [];
+    var x = <String>[];
     expect(pouch.isNotNull(x), isTrue);
   });
 
@@ -23,10 +23,10 @@ void main() {
       () {
     var v = '1234';
     expect(pouch.cast<String>(v), equals(v));
-    expect(pouch.cast<List>(v), isNull);
-    var x = [];
+    expect(pouch.cast<List<String>>(v), isNull);
+    var x = <String>[];
     expect(pouch.cast<String>(x), isNull);
-    expect(pouch.cast<List>(x), equals(x));
+    expect(pouch.cast<List<String>>(x), equals(x));
   });
 
   test('identity() returns itself', () {

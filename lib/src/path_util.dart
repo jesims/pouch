@@ -11,7 +11,11 @@ class PathUtil {
   /// `since 0.4.0`
   static String relativeToCurrent(String folder) {
     return path.normalize(
-      LocalFileSystem().currentDirectory.childDirectory(folder).absolute.path,
+      const LocalFileSystem()
+          .currentDirectory
+          .childDirectory(folder)
+          .absolute
+          .path,
     );
   }
 }

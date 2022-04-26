@@ -8,7 +8,7 @@ void main() {
       test('throws an exception if check is false', () {
         expect(
           () => Require.require(false, Faker().lorem.sentence()),
-          throwsA(TypeMatcher<RequireException>()),
+          throwsA(const TypeMatcher<RequireException>()),
         );
       });
     });
@@ -17,7 +17,7 @@ void main() {
         void expectThrown(String? s) {
           expect(
             () => Require.notBlank(s),
-            throwsA(TypeMatcher<RequireException>()),
+            throwsA(const TypeMatcher<RequireException>()),
           );
         }
 

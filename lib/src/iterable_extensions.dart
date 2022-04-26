@@ -31,10 +31,10 @@ extension IterableExtensions<E> on Iterable<E> {
   /// Returns an [Iterable] of [Iterable]s of [n] items each without overlap.
   ///
   /// `since 0.6.0`
-  Iterable partition(int n) {
+  Iterable<Iterable<E>> partition(int n) {
     assert(0 < n);
     // TODO Consider making lazy
-    return isEmpty ? [] : ([take(n), ...skip(n).partition(n)]);
+    return isEmpty ? <Iterable<E>>[] : ([take(n), ...skip(n).partition(n)]);
   }
 
   /// Groups the elements by the value returned by [key].

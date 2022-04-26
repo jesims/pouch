@@ -8,7 +8,7 @@ import 'package:test/test.dart';
 void main() {
   test('lists globs', () async {
     //TODO use MemoryFileSystem
-    var fs = LocalFileSystem();
+    var fs = const LocalFileSystem();
     expect(
       await listFilesByGlob(['*.md'])
           //peek to make sure the FileSystemEntity is correct

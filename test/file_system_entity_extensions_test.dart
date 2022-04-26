@@ -42,7 +42,7 @@ void main() {
         await file.forceDelete();
         expect(
           () async => await file.delete(),
-          throwsA(TypeMatcher<io.FileSystemException>()),
+          throwsA(const TypeMatcher<io.FileSystemException>()),
         );
       });
       test('does not error if the dir does not exist', () async {
@@ -53,7 +53,7 @@ void main() {
         await dir.forceDelete();
         expect(
           () async => await dir.delete(),
-          throwsA(TypeMatcher<io.FileSystemException>()),
+          throwsA(const TypeMatcher<io.FileSystemException>()),
         );
       });
     });
