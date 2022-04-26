@@ -1,3 +1,17 @@
+# 1.4.0
+
+Added:
+
+- `Time` and `Date` models
+
+Fixed:
+
+- Lint and Analysis warnings for:
+  - `IterableExtensions`
+  - `MapExtensions`
+  - `PathUtil`
+  - `Wait`
+
 # 1.3.0
 
 Added to `pouch_io`:
