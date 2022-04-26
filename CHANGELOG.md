@@ -11,6 +11,7 @@ Fixed:
   - `MapExtensions`
   - `PathUtil`
   - `Wait`
+- Added missing `file` and `collection` dependencies
 
 # 1.3.0
 
