@@ -26,7 +26,7 @@ Stream<FileSystemEntity> listFilesByGlob(
   Iterable<String> globs, {
   String? workingDirectory,
 }) {
-  var context = isNotBlank(workingDirectory)
+  var context = StringUtil.isNotBlank(workingDirectory)
       ? path.Context(current: workingDirectory)
       : path.context;
   return Glob(

@@ -38,7 +38,7 @@ class Require {
   }
 
   /// Throws a [RequireException] if [string] is blank.
-  /// See [isBlank]
+  /// See [StringUtil.isBlank]
   ///
   /// `since 0.7.0`
   static String notBlank(String? string) {
