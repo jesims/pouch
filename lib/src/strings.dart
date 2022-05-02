@@ -12,7 +12,7 @@ bool isNotBlank(String? v) => isBlank(v).isFalse;
 /// (whitespace only)
 ///
 /// `since 0.0.1`
-// TODO improver performance by checking if every character is whitespace
+// TODO improve performance by checking if every character is whitespace
 bool isBlank(String? v) => isNull(v) || v!.trim().isEmpty;
 
 /// Returns `true` if [left] is equal to [right] irrespective of case
