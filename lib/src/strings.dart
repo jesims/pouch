@@ -66,4 +66,12 @@ class StringUtil {
       return s!.toLowerCase().contains(needle!.toLowerCase());
     }
   }
+
+  /// Returns a new [String] from [s] which ends with the supplied [suffix].
+  /// If [s] already ends with [suffix], [s] is returned unchanged.
+  ///
+  /// `since 1.5.0`
+  static String ensureEndsWith(String s, String suffix) {
+    return s.endsWith(suffix).isFalse ? '$s$suffix' : s;
+  }
 }
