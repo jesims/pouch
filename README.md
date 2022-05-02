@@ -1,5 +1,7 @@
 # Pouch
 
+![Pub Version](https://img.shields.io/pub/v/pouch)
+
 Generic Dart utilities and helper functions
 
 ## Usage
@@ -8,10 +10,7 @@ Update your `pubspec.yaml` file and add `pouch` as a dependency
 
 ```yaml
 dependencies:
-  pouch:
-    git:
-      url: https://github.com/jesims/pouch.git
-      # ref: <tag, branch, or commit>
+  pouch: ^<version>
 ```
 
 In your Dart code, add an import for `pouch`
@@ -56,4 +55,3 @@ dart test
   - Lint
   - Format
   - and update CI config
-- Consider Publishing to [Pub.dev](https://pub.dev)
