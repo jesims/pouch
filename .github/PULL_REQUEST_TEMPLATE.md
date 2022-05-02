@@ -13,3 +13,4 @@
 
 - [ ] Tag repository with the latest version. `git tag x.y.z`
 - [ ] Push tags to GitHub. `git push -u --tags`
+- [ ] New Version published to `pub.dev` via `dart pub publish`
