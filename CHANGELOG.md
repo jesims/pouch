@@ -1,3 +1,22 @@
+# 1.5.0
+
+Added:
+
+- `StringUtil` static helpers:
+  - `isNotBlank`
+  - `isBlank`
+  - `equalsIgnoreCase`
+  - `containsIgnoreCase`
+  - `ensureEndsWith`
+
+Deprecated:
+
+- String helpers in favour of `StringUtil` methods:
+  - `isNotBlank(v)`
+  - `isBlank(v)`
+  - `equalsIgnoreCase(v)`
+  - `containsIgnoreCase(v)`
+
 # 1.4.0
 
 Added:

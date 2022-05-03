@@ -1,47 +1,60 @@
-import 'package:pouch/pouch.dart' as strings;
+import 'package:pouch/pouch.dart' show StringUtil;
 import 'package:test/test.dart';
 
 void main() {
-  test('isNotBlank() is true if the value is not blank', () {
-    expect(strings.isNotBlank(null), isFalse);
-    expect(strings.isNotBlank(''), isFalse);
-    expect(strings.isNotBlank('    '), isFalse);
-    expect(strings.isNotBlank('\t   \t'), isFalse);
-    expect(strings.isNotBlank('value'), isTrue);
-    expect(strings.isNotBlank('\t   \t hiya \t'), isTrue);
-  });
+  group(StringUtil, () {
+    test('isNotBlank() is true if the value is not blank', () {
+      expect(StringUtil.isNotBlank(null), isFalse);
+      expect(StringUtil.isNotBlank(''), isFalse);
+      expect(StringUtil.isNotBlank('    '), isFalse);
+      expect(StringUtil.isNotBlank('\t   \t'), isFalse);
+      expect(StringUtil.isNotBlank('value'), isTrue);
+      expect(StringUtil.isNotBlank('\t   \t hiya \t'), isTrue);
+    });
 
-  test('isBlank() is true if the value is blank', () {
-    expect(strings.isBlank(null), isTrue);
-    expect(strings.isBlank(''), isTrue);
-    expect(strings.isBlank('    '), isTrue);
-    expect(strings.isBlank('\t   \t'), isTrue);
-    expect(strings.isBlank('value'), isFalse);
-    expect(strings.isBlank('\t   \t hiya \t'), isFalse);
-  });
+    test('isBlank() is true if the value is blank', () {
+      expect(StringUtil.isBlank(null), isTrue);
+      expect(StringUtil.isBlank(''), isTrue);
+      expect(StringUtil.isBlank('    '), isTrue);
+      expect(StringUtil.isBlank('\t   \t'), isTrue);
+      expect(StringUtil.isBlank('value'), isFalse);
+      expect(StringUtil.isBlank('\t   \t hiya \t'), isFalse);
+    });
 
-  test('equalsIgnoreCase()', () {
-    expect(strings.equalsIgnoreCase('', ''), isTrue);
-    expect(strings.equalsIgnoreCase('Left ', 'left'), isFalse);
-    expect(strings.equalsIgnoreCase('Left', 'LEFT'), isTrue);
-    expect(strings.equalsIgnoreCase('Left', 'left'), isTrue);
-    expect(strings.equalsIgnoreCase('Left', null), isFalse);
-    expect(strings.equalsIgnoreCase('left', 'right'), isFalse);
-    expect(strings.equalsIgnoreCase(null, 'right'), isFalse);
-    expect(strings.equalsIgnoreCase(null, null), isTrue);
-  });
+    test('equalsIgnoreCase()', () {
+      expect(StringUtil.equalsIgnoreCase('', ''), isTrue);
+      expect(StringUtil.equalsIgnoreCase('Left ', 'left'), isFalse);
+      expect(StringUtil.equalsIgnoreCase('Left', 'LEFT'), isTrue);
+      expect(StringUtil.equalsIgnoreCase('Left', 'left'), isTrue);
+      expect(StringUtil.equalsIgnoreCase('Left', null), isFalse);
+      expect(StringUtil.equalsIgnoreCase('left', 'right'), isFalse);
+      expect(StringUtil.equalsIgnoreCase(null, 'right'), isFalse);
+      expect(StringUtil.equalsIgnoreCase(null, null), isTrue);
+    });
 
-  test('containsIgnoreCase()', () {
-    expect(strings.containsIgnoreCase('', ''), isTrue);
-    expect(strings.containsIgnoreCase('Left ', 'left'), isTrue);
-    expect(strings.containsIgnoreCase('Left', 'LEFT'), isTrue);
-    expect(strings.containsIgnoreCase('Left', null), isFalse);
-    expect(strings.containsIgnoreCase('left', 'right'), isFalse);
-    expect(
-      strings.containsIgnoreCase('A longer sentence with Words', 'with words'),
-      isTrue,
-    );
-    expect(strings.containsIgnoreCase(null, 'right'), isFalse);
-    expect(strings.containsIgnoreCase(null, null), isTrue);
+    test('containsIgnoreCase()', () {
+      expect(StringUtil.containsIgnoreCase('', ''), isTrue);
+      expect(StringUtil.containsIgnoreCase('Left ', 'left'), isTrue);
+      expect(StringUtil.containsIgnoreCase('Left', 'LEFT'), isTrue);
+      expect(StringUtil.containsIgnoreCase('Left', null), isFalse);
+      expect(StringUtil.containsIgnoreCase('left', 'right'), isFalse);
+      expect(
+        StringUtil.containsIgnoreCase(
+          'A longer sentence with Words',
+          'with words',
+        ),
+        isTrue,
+      );
+      expect(StringUtil.containsIgnoreCase(null, 'right'), isFalse);
+      expect(StringUtil.containsIgnoreCase(null, null), isTrue);
+    });
+
+    test('ensureEndsWith', () {
+      expect(StringUtil.ensureEndsWith('this', 'that'), equals('thisthat'));
+      expect(StringUtil.ensureEndsWith('this', 'this'), equals('this'));
+      expect(StringUtil.ensureEndsWith('this', '/'), equals('this/'));
+      expect(StringUtil.ensureEndsWith('', 'suffix'), equals('suffix'));
+      expect(StringUtil.ensureEndsWith('prefix', ''), equals('prefix'));
+    });
   });
 }
