@@ -8,14 +8,14 @@ import 'require.dart';
 class RequireFile {
   RequireFile._();
 
-  /// Throws an exception if the [file] does not exist (using [Require.require])
+  /// Throws an exception if the [fse] does not exist (using [Require.require])
   ///
   /// `since 0.7.0`
-  static Future<File> exists(File file) async {
+  static Future<T> exists<T extends FileSystemEntity>(T fse) async {
     Require.require(
-      await file.exists(),
-      'File not found: ${file.path}',
+      await fse.exists(),
+      'File not found: ${fse.path}',
     );
-    return file;
+    return fse;
   }
 }
