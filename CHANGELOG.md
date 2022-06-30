@@ -1,3 +1,9 @@
+# 1.5.1
+
+Changed:
+
+- `RequireFile.exists` now takes the more generic `FileSystemEntity`
+
 # 1.5.0
 
 Added:
