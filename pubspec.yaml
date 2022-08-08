@@ -1,6 +1,6 @@
 name: pouch
 description: Generic Dart utilities and helper functions
-version: 1.6.0
+version: 1.7.0
 homepage: https://github.com/jesims/pouch
 
 environment:
@@ -17,6 +17,7 @@ dependencies:
 dev_dependencies:
   faker: ^2.0.0
   lints: ^1.0.1
+  mocktail: ^0.3.0
   test: ^1.20.0
   universal_io: ^2.0.4
   jesi_dart_analysis:
