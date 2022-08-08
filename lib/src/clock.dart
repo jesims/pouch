@@ -22,7 +22,7 @@ class DartClock implements Clock {
   /// An optional implementation of [_now] can be provided to override implementation
   ///
   /// `since 1.7.0`
-  DartClock([this._now = _defaultTime]);
+  const DartClock([this._now = _defaultTime]);
 
   @override
   int millisecondsSinceEpoch() => _now().millisecondsSinceEpoch;
