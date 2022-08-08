@@ -1,3 +1,10 @@
+# 1.7.0
+
+Added:
+
+- Abstract `Clock` and `DartClock` implementation
+- Abstract `Waiter` and `PollingWaiter` implementation
+
 # 1.6.0
 
 Changed:
