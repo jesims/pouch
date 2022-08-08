@@ -37,7 +37,9 @@ class Wait {
 ///
 /// `since 1.7.0`
 abstract class Waiter {
-  /// Waits for the [task] to be finished (identified by [isFinished]).
+  /// Waits for [isFinished] to resolve `true` for the identified [task].
+  ///
+  /// `since 1.7.0`
   Future<void> until(
     String task,
     FutureOr<bool> Function() isFinished,
@@ -49,20 +51,30 @@ abstract class Waiter {
 /// `since 1.7.0`
 class PollingWaiter implements Waiter {
   /// The Duration to wait before any predicate to become true
+  ///
+  /// `since 1.7.0`
   final Duration timeout;
 
   /// The duration to wait between predicate checks
+  ///
+  /// `since 1.7.0`
   final Duration interval;
 
   /// Implementation of [Clock] for time keeping
+  ///
+  /// `since 1.7.0`
   @visibleForTesting
   final Clock clock;
 
   /// Implementation of performing a wait for a specified [duration]
+  ///
+  /// `since 1.7.0`
   @visibleForTesting
   Future<void> Function(Duration duration) delay = Future<void>.delayed;
 
   /// Constructs a new instance of [PollingWaiter]
+  ///
+  /// `since 1.7.0`
   PollingWaiter({
     this.timeout = const Duration(seconds: 30),
     this.interval = const Duration(milliseconds: 100),
