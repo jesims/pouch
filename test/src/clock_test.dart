@@ -11,7 +11,19 @@ void main() {
     var mockDateTime = MockDateTime();
     var clock = DartClock(() => mockDateTime.now());
 
+    tearDown(() => verifyNoMoreInteractions(mockDateTime));
+
     group('millisecondsSinceEpoch', () {
+      test('resolves the current milliseconds since epoch', () {
+        var now = DateTime.now();
+        when(() => mockDateTime.now()).thenAnswer((_) => now);
+
+        var actual = clock.millisecondsSinceEpoch();
+
+        expect(actual, now.millisecondsSinceEpoch);
+        verify(() => mockDateTime.now());
+      });
+
       test('changes over time', () {
         var offset = const Duration(milliseconds: 15);
         var first = DateTime.now();
@@ -25,6 +37,7 @@ void main() {
 
         expect(actualFirst, lessThan(actualSecond));
         expect(actualFirst, actualSecond - 15);
+        verify(() => mockDateTime.now()).called(2);
       });
     });
   });
