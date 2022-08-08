@@ -12,6 +12,7 @@ dependencies:
   file: ^6.1.2
   glob: ^2.0.2
   intl: ^0.17.0
+  meta: ^1.8.0
   path: ^1.8.1
 
 dev_dependencies:
