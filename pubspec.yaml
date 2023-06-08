@@ -4,23 +4,22 @@ version: 1.7.0
 homepage: https://github.com/jesims/pouch
 
 environment:
-  sdk: '>=2.15.0 <3.0.0'
+  sdk: ^3.0.0
 
 dependencies:
   collection: ^1.16.0
   equatable: ^2.0.0
-  file: ^6.1.2
+  file: ^7.0.0
   glob: ^2.0.2
-  intl: ^0.17.0
+  intl: ^0.18.1
   meta: ^1.8.0
   path: ^1.8.1
 
 dev_dependencies:
   faker: ^2.0.0
-  lints: ^1.0.1
+  lints: ^2.0.0
   mocktail: ^0.3.0
   test: ^1.20.0
   universal_io: ^2.0.4
   jesi_dart_analysis:
-    git:
-      url: https://github.com/jesims/jesi_dart_analysis.git
+    git: git@github.com:jesims/jesi_dart_analysis.git
