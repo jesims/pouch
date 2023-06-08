@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   test-analyze-format-job:
     docker:
-      - image: axrs/anvil:base
+      - image: dart
     steps:
       - checkout
       - restore_cache:
@@ -14,9 +14,8 @@ jobs:
           paths:
             - ~/.pub-cache
       - run: "dart analyze"
-      - run: "dart format --fix ."
+      - run: "dart format --set-exit-if-changed ."
       - run: "dart test"
-      - run: "git diff-index --name-status HEAD --exit-code"
 workflows:
   main:
     jobs:

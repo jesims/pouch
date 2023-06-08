@@ -1,3 +1,9 @@
+# 2.0.0
+
+Breaking:
+
+- Requires Dart 3
+
 # 1.7.0
 
 Added:
@@ -16,19 +22,19 @@ Changed:
 Added:
 
 - `StringUtil` static helpers:
-  - `isNotBlank`
-  - `isBlank`
-  - `equalsIgnoreCase`
-  - `containsIgnoreCase`
-  - `ensureEndsWith`
+    - `isNotBlank`
+    - `isBlank`
+    - `equalsIgnoreCase`
+    - `containsIgnoreCase`
+    - `ensureEndsWith`
 
 Deprecated:
 
 - String helpers in favour of `StringUtil` methods:
-  - `isNotBlank(v)`
-  - `isBlank(v)`
-  - `equalsIgnoreCase(v)`
-  - `containsIgnoreCase(v)`
+    - `isNotBlank(v)`
+    - `isBlank(v)`
+    - `equalsIgnoreCase(v)`
+    - `containsIgnoreCase(v)`
 
 # 1.4.0
 
@@ -39,10 +45,10 @@ Added:
 Fixed:
 
 - Lint and Analysis warnings for:
-  - `IterableExtensions`
-  - `MapExtensions`
-  - `PathUtil`
-  - `Wait`
+    - `IterableExtensions`
+    - `MapExtensions`
+    - `PathUtil`
+    - `Wait`
 - Added missing `file` and `collection` dependencies
 
 # 1.3.0
@@ -81,17 +87,17 @@ Breaking:
 
 - Require at least Dart SDK 2.15
 - Removed functions not inline with the Dart way:
-  - `CollectionUtil.getIn`
-  - `IterableExtensions.getIn`
-  - `ListExtensions.getIn`
-  - `isNotEmpty`
-  - `isEmpty`
+    - `CollectionUtil.getIn`
+    - `IterableExtensions.getIn`
+    - `ListExtensions.getIn`
+    - `isNotEmpty`
+    - `isEmpty`
 - Use `Object` rather than `dynamic` in:
-  - `KeyNotFoundException`
-  - `isNull`
-  - `isNotNull`
-  - `cast`
-  - `toString`
+    - `KeyNotFoundException`
+    - `isNull`
+    - `isNotNull`
+    - `cast`
+    - `toString`
 
 Fixed:
 
@@ -104,8 +110,8 @@ Added:
 - `IterableExtensions.groupBy`
 - `NullableBoolExtensions`
 - `Resource` with:
-  - `ResourceUtils`
-  - `ResourceSync`
+    - `ResourceUtils`
+    - `ResourceSync`
 
 # 0.7.0
 
@@ -143,11 +149,11 @@ Added:
 Added:
 
 - `package:pouch/pouch.dart`
-  - `MapExtentions.removeNullValues`
-  - `MapUtil.removeNullValues`
-  - `Wait.until`
+    - `MapExtentions.removeNullValues`
+    - `MapUtil.removeNullValues`
+    - `Wait.until`
 - `package:pouch/pouch_io.dart`
-  - `PathUtil.relativeToCurrent`
+    - `PathUtil.relativeToCurrent`
 
 # 0.3.0
 
